@@ -1,7 +1,9 @@
-import logo from "./logo.svg";
+import logo from './logo.svg';
+import './App.css';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import LandingPage from './pages/LandingPage';
+import Dashboard from './pages/Dashboard';
 import "./App.css";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import LandingPage from "./pages/LandingPage";
 import Auth from "./pages/Auth";
 
 function App() {
@@ -11,12 +13,12 @@ function App() {
       element: <LandingPage />,
     },
     {
-      path: "/auth",
-      element: <Auth />,
+      path: '/dashboard',
+      element: <Dashboard />
     },
-    {
-      path: "/register",
-      // element: <Register />,
+      {
+    path: "/auth",
+      element: <Auth />
     },
   ]);
   return (

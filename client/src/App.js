@@ -6,6 +6,8 @@ import Login from "./pages/Login";
 import Profile from "./pages/Profile";
 import { useState, useEffect } from "react";
 import "./App.css";
+import CreateTest from "./pages/CreateTest";
+import ExploreTests from "./pages/ExploreTests";
 
 function App() {
   const [token, setToken] = useState(localStorage.getItem("token") || "");
@@ -25,6 +27,10 @@ function App() {
       element: <Dashboard />,
     },
     {
+      path: "/createtest",
+      element: <CreateTest />,
+    },
+    {
       path: "/Register",
       element: <Register />,
     },
@@ -36,6 +42,10 @@ function App() {
       path: "/login",
       element: <Login setToken={setToken} setUserId={setUserId} />,
     },
+    {
+      path: "/explore",
+      element: <ExploreTests />
+    }
   ]);
 
   return <RouterProvider router={router} />;

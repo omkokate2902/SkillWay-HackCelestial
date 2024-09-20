@@ -34,6 +34,7 @@ function Profile({ token, userId }) {
 
     const formData = new FormData();
     formData.append("image", selectedImage);
+    formData.append("userId", userId); // Send userId with the file
 
     // Log the formData content (this won't work with a simple console.log(formData))
     for (const pair of formData.entries()) {
@@ -41,15 +42,13 @@ function Profile({ token, userId }) {
     }
 
     try {
-      console.log("in Profile ", userId, formData);
-
       await axios.post(
-        "http://192.168.84.102:8000/api/users/uploadImage",
+        "http://192.168.84.102:8000/api/users/uploadFile", // Corrected URL
         formData,
         {
           headers: {
             "Content-Type": "multipart/form-data",
-            Authorization: `Bearer ${token}`, // Assuming you use token for authentication
+            Authorization: `Bearer ${token}`, // Ensure token is passed if required
           },
           withCredentials: true,
         }

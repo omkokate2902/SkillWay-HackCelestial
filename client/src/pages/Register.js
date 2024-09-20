@@ -22,6 +22,9 @@ const Register = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     console.log("started");
+    console.log(username)
+    console.log(email)
+    console.log(password)
 
     try {
       // Sign Up Request
@@ -49,79 +52,206 @@ const Register = () => {
   };
 
   return (
-    <div className="auth-container">
-      {register === false ? (
-        <>
-          <div className="auth-box">
-            <h1 className="auth-heading">Register As</h1>
-            <label htmlFor="registerType" className="auth-label">
-              Select Registration Type
-            </label>
-            <select
-              id="registerType"
-              className="auth-select"
-              value={selectedType}
-              onChange={handleSelection}
-              required="required"
-            >
-              <option value="" disabled>
-                Choose an option
-              </option>
-              <option value="individual">Individual</option>
-              <option value="organization">Organization</option>
-            </select>
-            <button
-              onClick={handleNext}
-              disabled={!selectedType}
-              className="auth-next-button"
-            >
-              Next
-            </button>
-          </div>
-        </>
-      ) : (
-        <>
-          <div className="Register">
+    <>
+
+
+      <div className="auth-containe">
+        {register === false ? (
+          <>
+            <div className="auth-box">
+              <h1 className="auth-heading">Register As</h1>
+              <label htmlFor="registerType" className="auth-label">
+                Select Registration Type
+              </label>
+              <select
+                id="registerType"
+                className="auth-select"
+                value={selectedType}
+                onChange={handleSelection}
+                required="required"
+              >
+                <option value="" disabled>
+                  Choose an option
+                </option>
+                <option value="individual">Individual</option>
+                <option value="organization">Organization</option>
+              </select>
+              <button
+                onClick={handleNext}
+                disabled={!selectedType}
+                className="auth-next-button"
+              >
+                Next
+              </button>
+            </div>
+          </>
+        ) : (
+          <>
+
             {selectedType === "individual" && (
-              <form onSubmit={handleSubmit}>
-                <div>
-                  <label>Username</label>
-                  <input
-                    type="text"
-                    placeholder="Enter your username"
-                    value={username}
-                    onChange={(e) => setUsername(e.target.value)}
-                    required
-                  />
-                </div>
-                <div>
-                  <label>Email</label>
-                  <input
-                    type="email"
-                    placeholder="Enter your email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    required
-                  />
-                </div>
-                <div>
-                  <label>Password</label>
-                  <input
-                    type="password"
-                    placeholder="Enter your password"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                    required
-                  />
-                </div>
-                <button type="submit">Register</button>
-              </form>
+              <>
+                <section class="form_page">
+                  <div class="container">
+                    <div class="row">
+                      <div class="col-xl-6">
+                        <div class="form_block">
+                          <div class="text_block">
+                            <a href="/" class="educate_link_btn color-primary h6 mb-48"><i
+                              class="far fa-chevron-left"></i> Back To Home</a>
+                            <div class="title">
+                              <img src="assets/media/shapes/mic-speaker.png" alt="" class="speaker_icon" />
+                              <h2 class="mb-48">Create an account</h2>
+                            </div>
+
+
+                            <div class="text-center">
+                              <h6 class="mb-24">Sign up with your email address</h6>
+                            </div>
+                            <form onSubmit={handleSubmit} class="form-validator">
+                              <div class="row">
+                                <div class="col-sm-12">
+                                  <div class="mb-24">
+                                    <input type="text" class="form-control p_lg" id="first-name"
+                                      name="first-name" required placeholder="Enter Username" value={username}
+                                      onChange={(e) => setUsername(e.target.value)}
+                                    />
+                                  </div>
+                                </div>
+
+                              </div>
+                              <div class="mb-24">
+                                <input type="email" class="form-control p_lg" id="login-email"
+                                  name="login-email" required placeholder="Email" value={email}
+                                  onChange={(e) => setEmail(e.target.value)} />
+                              </div>
+                              <div class="mb-24">
+                                <input type="password" class="form-control p_lg" id="login-password"
+                                  name="login-password" required placeholder="Password" value={password}
+                                  onChange={(e) => setPassword(e.target.value)} />
+                              </div>
+                              <button type="submit" class="b-unstyle educate-btn w-100 mb-24"><span
+                                class="educate-btn__curve"></span>Create Account</button>
+                            </form>
+                            <div class="text-end">
+                              <h6>Already have an account? <a href="/login" class="color-primary"> Login</a>
+                              </h6>
+                            </div>
+                          </div>
+                          <div class="shapes">
+                            <img src="assets/media/shapes/vector-9.png" alt="" />
+                            <img src="assets/media/shapes/vector-8.png" alt="" />
+                            <img src="assets/media/shapes/circle-lines-3.png" alt="" />
+                            <img src="assets/media/shapes/location.png" alt="" />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                </section>
+                {/* <form onSubmit={handleSubmit}>
+                    <div>
+                      <label>Username</label>
+                      <input
+                        type="text"
+                        placeholder="Enter your username"
+                        value={username}
+                        onChange={(e) => setUsername(e.target.value)}
+                        required
+                      />
+                    </div>
+                    <div>
+                      <label>Email</label>
+                      <input
+                        type="email"
+                        placeholder="Enter your email"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        required
+                      />
+                    </div>
+                    <div>
+                      <label>Password</label>
+                      <input
+                        type="password"
+                        placeholder="Enter your password"
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                        required
+                      />
+                    </div>
+                    <button type="submit">Register</button>
+                  </form> */}
+              </>
+
             )}
-            {selectedType === "organization" && <>hii</>}
-          </div>
-        </>
-      )}
-    </div>
+            {selectedType === "organization" && (<>
+
+              <section class="form_page">
+                <div class="container">
+                  <div class="row">
+                    <div class="col-xl-6">
+                      <div class="form_block">
+                        <div class="text_block">
+                          <a href="/" class="educate_link_btn color-primary h6 mb-48"><i
+                            class="far fa-chevron-left"></i> Back To Home</a>
+                          <div class="title">
+                            <img src="assets/media/shapes/mic-speaker.png" alt="" class="speaker_icon" />
+                            <h2 class="mb-48">Create an account</h2>
+                          </div>
+
+
+                          <div class="text-center">
+                            <h6 class="mb-24">Sign up with your email address</h6>
+                          </div>
+                          <form onSubmit={handleSubmit} class="form-validator">
+                            <div class="row">
+                              <div class="col-sm-12">
+                                <div class="mb-24">
+                                  <input type="text" class="form-control p_lg" id="first-name"
+                                    name="first-name" required placeholder="Enter Username" value={username}
+                                    onChange={(e) => setUsername(e.target.value)}
+                                  />
+                                </div>
+                              </div>
+
+                            </div>
+                            <div class="mb-24">
+                              <input type="email" class="form-control p_lg" id="login-email"
+                                name="login-email" required placeholder="Email" value={email}
+                                onChange={(e) => setEmail(e.target.value)} />
+                            </div>
+                            <div class="mb-24">
+                              <input type="password" class="form-control p_lg" id="login-password"
+                                name="login-password" required placeholder="Password" value={password}
+                                onChange={(e) => setPassword(e.target.value)} />
+                            </div>
+                            <button type="submit" class="b-unstyle educate-btn w-100 mb-24"><span
+                              class="educate-btn__curve"></span>Create Account</button>
+                          </form>
+                          <div class="text-end">
+                            <h6>Already have an account? <a href="/login" class="color-primary"> Login</a>
+                            </h6>
+                          </div>
+                        </div>
+                        <div class="shapes">
+                          <img src="assets/media/shapes/vector-9.png" alt="" />
+                          <img src="assets/media/shapes/vector-8.png" alt="" />
+                          <img src="assets/media/shapes/circle-lines-3.png" alt="" />
+                          <img src="assets/media/shapes/location.png" alt="" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </section>
+            </>)}
+
+          </>
+        )}
+      </div >
+    </>
   );
 };
 

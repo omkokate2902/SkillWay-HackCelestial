@@ -70,7 +70,7 @@ export default function LandingPage() {
                                     <i class="fal fa-user"></i>
                                 </a>
 
-                                <Link to='/dashboard'><p class="educate-btn sm d-xl-flex d-none"><span class="educate-btn__curve"></span>Get
+                                <Link to='/home'><p class="educate-btn sm d-xl-flex d-none"><span class="educate-btn__curve"></span>Get
                                     Started</p></Link>
                                 <a href="#" class="main-menu__toggler mobile-nav__toggler">
                                     <i class="fa fa-bars"></i>

@@ -8,7 +8,7 @@ const cors = require("cors"); // Import the CORS package
 const app = express();
 app.use(
   cors({
-    origin: "http://localhost:3000", // Allow requests from this origin
+    origin: true, // Allow all origins temporarily for testing
     credentials: true, // Allow cookies to be sent
   })
 );

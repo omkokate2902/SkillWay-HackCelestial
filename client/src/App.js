@@ -2,6 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import LandingPage from './pages/LandingPage';
+import Dashboard from './pages/Dashboard';
 
 
 function App() {
@@ -11,8 +12,8 @@ function App() {
       element: <LandingPage />
     },
     {
-      path: '/profile',
-      element: <h1>hii</h1>
+      path: '/dashboard',
+      element: <Dashboard />
     },
     {
       path: '/file',

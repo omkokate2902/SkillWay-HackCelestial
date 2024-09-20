@@ -1,0 +1,29 @@
+.codeSearch button,
+input {
+    padding: 5px;
+    border: 1px solid #d9d9d9;
+
+}
+
+.codeSearch button,
+.createTest button {
+    padding: 5px 10px;
+    font-weight: 500;
+    border: 1px solid #d9d9d9;
+    background-color: #3F6AD8;
+    color: white;
+    border-radius: 4px;
+}
+
+.nav-link {
+    color: #000;
+}
+
+
+.codeSearch button:hover {
+    cursor: pointer;
+}
+
+.createTest button:hover {
+    cursor: pointer;
+}

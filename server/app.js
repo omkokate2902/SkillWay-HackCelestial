@@ -8,7 +8,7 @@ const cors = require("cors"); // Import the CORS package
 const app = express();
 app.use(
   cors({
-    origin: "http://localhost:3001", // Allow requests from this origin
+    origin: "http://localhost:3000", // Allow requests from this origin
     credentials: true, // Allow cookies to be sent
   })
 );
@@ -28,5 +28,5 @@ app.use(cookieParser());
 app.use("/api/auth", authRoutes);
 
 // Start server
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 8000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));

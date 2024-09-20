@@ -43,6 +43,59 @@ function Login({ setToken, setUserId }) {
 
   return (
     <div>
+
+      <section class="form_page">
+        <div class="container">
+          <div class="row">
+            <div class="col-xl-6">
+              <div class="form_block">
+                <div class="text_block">
+                  <a href="/" class="educate_link_btn color-primary h6 mb-48"><i
+                    class="far fa-chevron-left"></i> Back To Home</a>
+                  <div class="title">
+                    <img src="assets/media/shapes/mic-speaker.png" alt="" class="speaker_icon" />
+                    <h2 class="mb-48">Login to an account</h2>
+                  </div>
+
+
+                  <div class="text-center">
+                    <h6 class="mb-24">Sign in with your email address</h6>
+                  </div>
+                  <form onSubmit={handleSubmit} class="form-validator">
+                    <div class="row">
+
+
+                    </div>
+                    <div class="mb-24">
+                      <input type="email" class="form-control p_lg" id="login-email"
+                        name="login-email" required placeholder="Email" value={email}
+                        onChange={(e) => setEmail(e.target.value)} />
+                    </div>
+                    <div class="mb-24">
+                      <input type="password" class="form-control p_lg" id="login-password"
+                        name="login-password" required placeholder="Password" value={password}
+                        onChange={(e) => setPassword(e.target.value)} />
+                    </div>
+                    <button type="submit" class="b-unstyle educate-btn w-100 mb-24"><span
+                      class="educate-btn__curve"></span>Login Account</button>
+                  </form>
+                  <div class="text-end">
+                    <h6>Don' have an account? <a href="/login" class="color-primary"> Register</a>
+                    </h6>
+                  </div>
+                </div>
+                <div class="shapes">
+                  <img src="assets/media/shapes/vector-9.png" alt="" />
+                  <img src="assets/media/shapes/vector-8.png" alt="" />
+                  <img src="assets/media/shapes/circle-lines-3.png" alt="" />
+                  <img src="assets/media/shapes/location.png" alt="" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </section>
       <form onSubmit={handleSubmit}>
         <div>
           <label>Email</label>
